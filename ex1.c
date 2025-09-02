@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int main (){
-    printf("1.              *");
+    printf("1.            *");
     printf("\n2.           *");
     printf("\n3.          *");
     printf("\n4.   *     *");

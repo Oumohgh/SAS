@@ -1,13 +1,11 @@
 #include<stdio.h>
-#include<math.h>
 
 int main (){
-int r=10,p;
+int r=10;
 float v;
-const pi =3.14;
-p=pow(10,3);
-v = ;
-
+const float pi =3.14;
+v = (4.0f/3.0f) *3.14*10*10*10;
+printf("volume d un sphere est %.2f",v);
 return 0;
 
 }
