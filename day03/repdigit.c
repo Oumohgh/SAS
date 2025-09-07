@@ -1,24 +1,43 @@
 #include <stdio.h>
-#include <stdbool.h>   
+
 int main(void) {
-    bool chiffre_vu[10] = {false}; 
-    int chiffre;
-    long nombre;
+    while (1) {
+        int occurrences[10] = {0}; 
+        long nombre;
 
-    printf("Entrez un nombre : ");
-    scanf("%ld", &nombre);
+        printf("Entrez un nombre (0 pour quitter) : ");
+        scanf("%ld", &nombre);
+        if (nombre <= 0)
+            break;
 
-    while (nombre > 0) {
-        chiffre = nombre % 10;             
-        if (chiffre_vu[chiffre]) {         
-            break;                          
+        long temp = nombre;
+        while (temp > 0) {
+            int chiffre = temp % 10;
+            occurrences[chiffre]++;
+            temp /= 10;
         }
-        chiffre_vu[chiffre] = true;         
-        nombre /= 10;     
+
+        printf("Chiffres repetes : ");
+        int trouve = 0;
+        for (int i = 0; i < 10; i++) {
+            if (occurrences[i] > 1) {
+                printf("%d ", i);
+                trouve = 1;
+            }
+        }
+        if (!trouve)
+            printf("Aucun");
+        printf("\n");
+        printf("Chiffre :     ");
+        for (int i = 0; i < 10; i++) {
+            printf("%d ", i);
+        }
+        printf("\nOccurrences : ");
+        for (int i = 0; i < 10; i++) {
+            printf("%d ", occurrences[i]);
+        }
+        printf("\n\n");
     }
-    if (nombre > 0)
-        printf("Des chiffres sont répétés.\n");
-    else
-        printf("Aucun chiffre répété.\n");
+    printf("Programme termin.\n");
     return 0;
 }
