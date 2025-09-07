@@ -20,6 +20,5 @@ int main(void) {
         printf("Des chiffres sont répétés.\n");
     else
         printf("Aucun chiffre répété.\n");
-
     return 0;
 }
