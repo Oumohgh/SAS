@@ -11,13 +11,13 @@ int main (){
     for(i=0;i<n;i++){
     printf("\n%der element est: %d",i+1,t[i]);
 }
-int max =t[0];
+int min=t[0];
 for(i=0;i<n;i++){
-   if (t[i]>max)
+   if (t[i]<min)
    {
-    max =t[i];
+    min =t[i];
    }
 }
- printf("\nle Maximum est %d",max);
+ printf("\nle Minimum est %d",min);
     return 0;
 }
